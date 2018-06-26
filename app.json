@@ -1,7 +1,8 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/logs/logs"
+        "pages/logs/logs",
+        "pages/API/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -18,7 +19,7 @@
                 "text": "组件"
             },
             {
-                "pagePath": "pages/logs/logs",
+                "pagePath": "pages/API/index",
                 "iconPath": "image/icon_API.png",
                 "selectedIconPath": "image/icon_API_HL.png",
                 "text": "接口"
