@@ -39,7 +39,42 @@ App({
   onHide: function() {
       console.log("app hide");
   },
+  getUserInfo: function(cb) {
+      var tha= this;
+      if(this.globalData.userInfo) {
+        typeof cb=='function' && cd(this.globalData.userInfo);
+      } else {
+          // 调用登录接口
+          wx.login({
+              success: function(res) {
+                  that.global.userInfo = res.userInfo;
+                  typeof cd=='function' && cd(that.global.userInfo);
+              }
+          })
+      }
+  },
+  getLocationInfo: function(cb) {
+    var that = this;
+    if(this.globalData.locationInfo) {
+        cb(this.globalData.locationInfo)
+    } else {
+        wx.getLocation({
+            type: 'wgs84',
+            success: function(res) {
+                that.globalData.locationInfo = res;
+                cb(that.globalData.locationInfo);
+            },
+            fail: function() {
+                console.log('获取地理坐标失败');
+            },
+            complete: function() {
+                console.log('获取地理坐标完成');
+            }
+        })
+    }
+  },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    locationInfo:null
   }
 })
