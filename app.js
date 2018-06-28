@@ -39,6 +39,7 @@ App({
   onHide: function() {
       console.log("app hide");
   },
+  
   getUserInfo: function(cb) {
       var tha= this;
       if(this.globalData.userInfo) {
@@ -59,7 +60,7 @@ App({
         cb(this.globalData.locationInfo)
     } else {
         wx.getLocation({
-            type: 'wgs84',
+            type: 'gcj02',
             success: function(res) {
                 that.globalData.locationInfo = res;
                 cb(that.globalData.locationInfo);
@@ -75,6 +76,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    locationInfo:null
+    locationInfo:null,
+    getSystemInfo: wx.getSystemInfoSync()
   }
 })

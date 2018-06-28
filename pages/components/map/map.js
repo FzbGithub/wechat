@@ -1,19 +1,23 @@
 const app = getApp();
 Page({
     data: {
+        mapHeight: app.globalData.getSystemInfo.windowHeight,
         position: {
             longitude: '113.324520',
             latitude: '23.099994'
         },
-        markers: [{
-            iconPath: "/image/location.png",
-            id: 0,
-            latitude: 23.099994,
-            longitude: 113.324520,
-            width: 30,
-            height: 30
-        }],
+        markers: [],
         controls: [{
+            id: 0,
+            iconPath: '/image/location.png',
+            position: {
+                left: app.globalData.getSystemInfo.windowWidth / 2 - 15,
+                top: app.globalData.getSystemInfo.windowHeight / 2 - 30,
+                width: 30,
+                height: 30
+            },
+            clickable: true
+        }, {
             id: 1,
             iconPath: '/image/icon_API_HL.png',
             position: {
@@ -25,7 +29,7 @@ Page({
             clickable: true
         }]
     },
-    onLoad: function () {
+    onReady: function () {
         var that = this;
         app.getLocationInfo(function (locationInfo) {
             console.log(locationInfo);
@@ -33,18 +37,9 @@ Page({
                 position: {
                     longitude: locationInfo.longitude,
                     latitude: locationInfo.latitude
-                },
-                // 114.053369,22.642139
-                markers: [{
-                    iconPath: "/image/location.png",
-                    id: 0,
-                    latitude: locationInfo.latitude,
-                    longitude: locationInfo.longitude,
-                    width: 30,
-                    height: 30
-                }],
+                }
             })
-            
+
         })
     },
     //获取中间点的经纬度，并mark出来
@@ -76,7 +71,7 @@ Page({
     regionchange(e) {
         // 地图发生变化的时候，获取中间点，也就是用户选择的位置
         if (e.type == 'end') {
-           this.getLngLat()
+            this.getLngLat()
         }
     },
     controltap: function () {

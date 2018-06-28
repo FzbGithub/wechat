@@ -1,3 +1,7 @@
 <view>
-    <map id="map" longitude="{{position.longitude}}" latitude="{{position.latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap"  bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+    <map id="map" longitude="{{position.longitude}}" latitude="{{position.latitude}}" scale="18" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap"  bindregionchange="regionchange" show-location style="width: 100%; height: {{mapHeight}}px;">
+    <cover-view>
+      经度：{{position.longitude}},纬度：{{position.latitude}}高度：{{mapHeight}}
+    </cover-view>
+    </map>
 </view>
