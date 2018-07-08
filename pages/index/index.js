@@ -24,5 +24,26 @@ Page({
             }
         }
         this.setData({ list: list });
+    },
+    onLoad: function(option) {
+        // 获取不到地理位置时，退出小程序
+        console.log(app.globalData.ifCloseApp);
+        if (app.globalData.ifCloseApp) {
+            wx.navigateBack({
+                delta: 1
+            })
+        }
+    },
+    onReady: function () {
+        console.log("index onReady");
+    },
+    onShow: function () {
+        console.log("index onShow");
+    },
+    onHide: function () {
+        console.log("index onHide");
+    },
+    onUnload: function () {
+        console.log("index onUnload");
     }
 })

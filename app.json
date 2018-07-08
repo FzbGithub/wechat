@@ -3,7 +3,13 @@
         "pages/index/index",
         "pages/logs/logs",
         "pages/API/index",
-        "pages/components/map/map"
+        "pages/components/map/map",
+        "pages/API/pages/login/login",
+        "pages/API/pages/custom-message/custom-message",
+        "pages/API/pages/get-user-info/get-user-info",
+        "pages/API/pages/request-payment/request-payment",
+        "pages/API/pages/share/share",
+        "pages/API/pages/template-message/template-message"
     ],
     "window": {
         "backgroundTextStyle": "light",

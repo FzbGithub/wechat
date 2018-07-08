@@ -1,0 +1,4 @@
+<button wx:if="{{!hasLogin}}" type="primary" bindtap="login">登录微信</button>
+<view wx:if="{{hasLogin}}">
+    <text>微信已登录</text>
+</view>
