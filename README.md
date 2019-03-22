@@ -1,8 +1,8 @@
 # wechat
 这是重写微信小程序的api与组件demo
-#第一次上传项目到github
-1.本地git初始化，git init
-2.本地git将项目所有文件添加到本地仓库 git add .
+### 第一次上传项目到github
+1. 本地git初始化，git init
+2. 本地git将项目所有文件添加到本地仓库 git add .
 3.本地git将已经add的所有文件commit到本地仓库 git commit -m "第一次创建项目"
 4.github为远程的仓库，在github上创建好，复制仓库地址：https://github.com/FzbGithub/wechat
 5.本地仓库关联到远程github仓库上，git remote add origin https://github.com/FzbGithub/wechat
